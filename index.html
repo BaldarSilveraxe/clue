@@ -1,55 +1,59 @@
 <!doctype html>
 <html lang="en" data-theme="auto">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Clue B</title>
     <script>
-        /* jshint esversion: 11 */
-        (() => {
-            const KEY = 'theme-mode'; // 'light' | 'dark' | 'auto'
-            const mql = matchMedia('(prefers-color-scheme: dark)');
-            const sys = () => (mql.matches ? 'dark' : 'light');
+      /* jshint esversion: 11 */
+      (() => {
+        const KEY = 'theme-mode'; // 'light' | 'dark' | 'auto'
+        const mql = matchMedia('(prefers-color-scheme: dark)');
+        const sys = () => (mql.matches ? 'dark' : 'light');
 
-            function apply(mode) {
-                const t = mode === 'auto' ? sys() : mode;
-                const root = document.documentElement;
-                root.dataset.theme = t;
-                root.style.colorScheme = t;
-            }
-            let mode = 'auto';
+        function apply(mode) {
+          const t = mode === 'auto' ? sys() : mode;
+          const root = document.documentElement;
+          root.dataset.theme = t;
+          root.style.colorScheme = t;
+        }
+        let mode = 'auto';
+        try {
+          mode = localStorage.getItem(KEY) || 'auto';
+        } catch {}
+        apply(mode);
+        mql.addEventListener?.('change', () => {
+          try {
+            if ((localStorage.getItem(KEY) || 'auto') === 'auto') apply('auto');
+          } catch {}
+        });
+        window.theme = {
+          set(m) {
             try {
-                mode = localStorage.getItem(KEY) || 'auto';
+              localStorage.setItem(KEY, m);
             } catch {}
-            apply(mode);
-            mql.addEventListener?.('change', () => {
-                try {
-                    if ((localStorage.getItem(KEY) || 'auto') === 'auto') apply('auto');
-                } catch {}
-            });
-            window.theme = {
-                set(m) {
-                    try {
-                        localStorage.setItem(KEY, m);
-                    } catch {}
-                    apply(m);
-                },
-                toggle() {
-                    this.set(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
-                }
-            };
-        })();;
+            apply(m);
+          },
+          toggle() {
+            this.set(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+          }
+        };
+      })();;
     </script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-</head>
-
-<body>
-    <h1>Hello World!</h1>
-    <p>This is my first HTML page.</p>
-    <svg class="icon" aria-hidden="true"><use href="svg/icons.svg#icon-cancel"></use></svg>
-    <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <nav id="nav" class="nav-primary" aria-label="Primary" role="tablist"><button role="tab" id="clueboards-tab" aria-controls="clueboards-panel" aria-selected="true" type="button" data-type="nav" data-cmd="clueboards" title="Clue Boards"><svg class="icon" aria-hidden="true">
+              <use href="svg/icons.svg#icon-cancel"></use>
+            </svg> Clue Boards </button></nav>
+      </header>
+      <h1>Hello World!</h1>
+      <p>This is my first HTML page.</p><svg class="icon" aria-hidden="true">
+        <use href="svg/icons.svg#icon-cancel"></use>
+      </svg><button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+    </div>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
