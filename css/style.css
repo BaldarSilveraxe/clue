@@ -124,6 +124,8 @@ header {
   vertical-align: -0.125em;
 }
 
+.bar { display: grid; grid-template-columns: 1fr auto; }
+
 .brand {
   display: inline-flex;
   align-items: center;
