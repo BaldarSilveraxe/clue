@@ -1,38 +1,20 @@
-/* =========================
-   TOKENS — dark defaults
-   (OKLCH; override in light theme)
-========================== */
-
 :root {
-  /* Surfaces */
   --bodyBG: oklch(17% 0.03 260);
-
-  /* Text & accents */
   --bodyFB: oklch(92% 0.02 255);
 }
 
-/* Optional: helps UA widgets match theme; some old validators warn on this */
-html[data-theme="light"] {
-  color-scheme: light;
-}
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
-
-/* =========================
-   THEME — light (foggy morning)
-========================== */
 :root[data-theme="light"] {
-  /* Surfaces */
   --bodyBG: oklch(93% 0.01 255);
-
-  /* Text & accents */
   --bodyFB: oklch(24% 0.03 255);
 }
 
-/* =========================
-   BASE / LAYOUT / COMPONENTS
-========================== */
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
 
 *,
 *::before,
@@ -46,10 +28,18 @@ body {
 }
 
 body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  line-height: 1.5;
-  color: var(--bodyFB);
   background: var(--bodyBG);
+  color: var(--bodyFB);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.icon {
+  block-size: 1em;
+  display: inline-block;
+  fill: currentColor;
+  inline-size: 1em;
+  margin-inline-start: 0.4em;
+  vertical-align: -0.125em;
 }
