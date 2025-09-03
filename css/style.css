@@ -123,3 +123,13 @@ header {
   margin-inline-start: 0.4em;
   vertical-align: -0.125em;
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  color: var(--brandFG);
+}
