@@ -6,26 +6,40 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Clue B</title>
     <script>
+        /* jshint esversion: 11 */
         (() => {
             const KEY = 'theme-mode'; // 'light' | 'dark' | 'auto'
             const mql = matchMedia('(prefers-color-scheme: dark)');
             const sys = () => (mql.matches ? 'dark' : 'light');
-            function apply(mode){
-              const t = mode === 'auto' ? sys() : mode;
-              const root = document.documentElement;
-              root.dataset.theme = t;
-              root.style.colorScheme = t;
+
+            function apply(mode) {
+                const t = mode === 'auto' ? sys() : mode;
+                const root = document.documentElement;
+                root.dataset.theme = t;
+                root.style.colorScheme = t;
             }
-            let mode = 'auto'; try { mode = localStorage.getItem(KEY) || 'auto'; } catch {}
+            let mode = 'auto';
+            try {
+                mode = localStorage.getItem(KEY) || 'auto';
+            } catch {}
             apply(mode);
             mql.addEventListener?.('change', () => {
-              try { if ((localStorage.getItem(KEY) || 'auto') === 'auto') apply('auto'); } catch {}
+                try {
+                    if ((localStorage.getItem(KEY) || 'auto') === 'auto') apply('auto');
+                } catch {}
             });
             window.theme = {
-              set(m){ try{ localStorage.setItem(KEY, m); }catch{} apply(m); },
-              toggle(){ this.set(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'); }
+                set(m) {
+                    try {
+                        localStorage.setItem(KEY, m);
+                    } catch {}
+                    apply(m);
+                },
+                toggle() {
+                    this.set(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+                }
             };
-          })();
+        })();;
     </script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
@@ -33,6 +47,7 @@
 <body>
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
+    <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
     <script src="js/main.js"></script>
 </body>
 
