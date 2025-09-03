@@ -112,12 +112,42 @@
             </div>
           </div>
         </header>
-        <h1>Hello World!</h1>
-        <p>This is my first HTML page.</p>
-        <svg class="icon" aria-hidden="true">
-            <use href="svg/icons.svg#icon-cancel"></use>
-        </svg>
-        <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+        <main class="content">
+          <section role="tabpanel" id="clueboards-panel" class="tab-panel" aria-labelledby="clueboards-tab">
+            clueboards-tab
+            <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+          </section>
+          <section role="tabpanel" id="casefiles-panel" class="tab-panel" aria-labelledby="casefiles-tab" hidden>
+            casefiles-tab
+          </section>
+          <section role="tabpanel" id="suspects-panel" class="tab-panel" aria-labelledby="suspects-tab" hidden>
+            suspects-tab
+          </section>
+          <section role="tabpanel" id="evidence-panel" class="tab-panel" aria-labelledby="evidence-tab" hidden>
+            evidence-ta
+          </section>
+          <section role="tabpanel" id="maps-panel" class="tab-panel" aria-labelledby="maps-tab" hidden>
+            maps-tab
+          </section>
+          <section role="tabpanel" id="calendars-panel" class="tab-panel" aria-labelledby="calendars-tab" hidden>
+            calendars-tab
+          </section>
+          <section role="tabpanel" id="notebooks-panel" class="tab-panel" aria-labelledby="notebooks-tab" hidden>
+            notebooks-tab
+          </section>
+          <section role="tabpanel" id="timelines-panel" class="tab-panel" aria-labelledby="timelines-tab" hidden>
+            timelines-tab
+          </section>
+          <section role="tabpanel" id="floorplans-panel" class="tab-panel" aria-labelledby="floorplans-tab" hidden>
+            floorplans-tab
+          </section>
+          <section role="tabpanel" id="communications-panel" class="tab-panel" aria-labelledby="communications-tab" hidden>
+            communications-tab
+          </section>
+          <section role="tabpanel" id="settings-panel" class="tab-panel" aria-labelledby="settings-tab" hidden>
+            settings-tab
+          </section>
+        </main>
     </div>
     <script src="js/main.js"></script>
 </body>
