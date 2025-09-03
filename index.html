@@ -45,25 +45,73 @@
 </head>
 
 <body>
-  <div class="page">
-    <header>
-      <nav id="nav" class="nav-primary" aria-label="Primary" role="tablist">
-        <button role="tab" id="clueboards-tab" aria-controls="clueboards-panel" aria-selected="true" type="button" data-type="nav" data-cmd="clueboards" title="Clue Boards">
-          <svg class="icon" aria-hidden="true">
-            <use href="svg/icons.svg#icon-mindmap"></use>
-          </svg> Clue Boards
-        </button>
-        <button role="tab" id="casefiles-tab" aria-controls="casefiles-panel" aria-selected="false" type="button" data-type="nav" data-cmd="casefiles" title="Case Files" tabindex="-1">
-          <svg class="icon" aria-hidden="true">
-            <use href="svg/icons.svg#icon-casefile"></use></svg> Case Files
-          </button>
-      </nav>
-    </header>
-    <h1>Hello World!</h1>
-    <p>This is my first HTML page.</p>
-    <svg class="icon" aria-hidden="true"><use href="svg/icons.svg#icon-cancel"></use></svg>
-    <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
-  </div>
+    <div class="page">
+        <header>
+            <nav id="nav" class="nav-primary" aria-label="Primary" role="tablist">
+                <button role="tab" id="clueboards-tab" aria-controls="clueboards-panel" aria-selected="true" type="button" data-type="nav" data-cmd="clueboards" title="Clue Boards">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-mindmap"></use>
+                    </svg> Clue Boards
+                </button>
+                <button role="tab" id="casefiles-tab" aria-controls="casefiles-panel" aria-selected="false" type="button" data-type="nav" data-cmd="casefiles" title="Case Files" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-casefile"></use>
+                    </svg> Case Files
+                </button>
+                <button role="tab" id="suspects-tab" aria-controls="suspects-panel" aria-selected="false" type="button" data-type="nav" data-cmd="suspects" title="Suspects" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-suspect"></use>
+                    </svg> Suspects
+                </button>
+                <button role="tab" id="evidence-tab" aria-controls="evidence-panel" aria-selected="false" type="button" data-type="nav" data-cmd="evidence" title="Evidence" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-fingerprint"></use>
+                    </svg> Evidence
+                </button>
+                <button role="tab" id="maps-tab" aria-controls="maps-panel" aria-selected="false" type="button" data-type="nav" data-cmd="maps" title="Maps" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-mappin"></use>
+                    </svg> Maps
+                </button>
+                <button role="tab" id="calendars-tab" aria-controls="calendars-panel" aria-selected="false" type="button" data-type="nav" data-cmd="calendars" title="Calendars" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-calendar"></use>
+                    </svg> Calendars
+                </button>
+                <button role="tab" id="notebooks-tab" aria-controls="notebooks-panel" aria-selected="false" type="button" data-type="nav" data-cmd="notebooks" title="Notebooks" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-notebook"></use>
+                    </svg> Notes
+                </button>
+                <button role="tab" id="timelines-tab" aria-controls="timelines-panel" aria-selected="false" type="button" data-type="nav" data-cmd="timelines" title="Timelines" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-clock"></use>
+                    </svg> Timeline
+                </button>
+                <button role="tab" id="floorplans-tab" aria-controls="floorplans-panel" aria-selected="false" type="button" data-type="nav" data-cmd="floorplans" title="Floorplans" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-floorplans"></use>
+                    </svg> Floor Plans
+                </button>
+                <button role="tab" id="communications-tab" aria-controls="communications-panel" aria-selected="false" type="button" data-type="nav" data-cmd="communications" title="Communications" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-phone"></use>
+                    </svg> Communication
+                </button>
+                <button role="tab" id="settings-tab" aria-controls="settings-panel" aria-selected="false" type="button" data-type="nav" data-cmd="settings" title="Settings" tabindex="-1">
+                    <svg class="icon" aria-hidden="true">
+                        <use href="svg/icons.svg#icon-gear"></use>
+                    </svg> Settings
+                </button>
+            </nav>
+        </header>
+        <h1>Hello World!</h1>
+        <p>This is my first HTML page.</p>
+        <svg class="icon" aria-hidden="true">
+            <use href="svg/icons.svg#icon-cancel"></use>
+        </svg>
+        <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+    </div>
     <script src="js/main.js"></script>
 </body>
 
