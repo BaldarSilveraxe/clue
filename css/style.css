@@ -135,3 +135,17 @@ header {
   font-weight: 600;
   color: var(--brandFG);
 }
+
+.main { container-type: inline-size; }
+
+[hidden] { display: none; }
+
+.tab-panel {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  grid-template-areas: "left main right";
+  block-size: 100%;
+  min-block-size: 0;
+  gap: clamp(8px, 1.5vw, 16px);
+  overflow: auto; /* This might fight for scroll control with the contents*/
+}
