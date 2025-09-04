@@ -2,6 +2,11 @@
   "name": "clue-ws",
   "private": true,
   "type": "module",
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "@hocuspocus/server": "^2.13.0" }
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hocuspocus/server": "^2.13.0"
+  }
 }
