@@ -114,38 +114,381 @@
         </header>
         <main class="content">
           <section role="tabpanel" id="clueboards-panel" class="tab-panel" aria-labelledby="clueboards-tab">
-            clueboards-tab
-            <button id="themeToggle" type="button" data-type="theme" title="Toggle theme"></button>
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Clue Board</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Clue Board</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="casefiles-panel" class="tab-panel" aria-labelledby="casefiles-tab" hidden>
-            casefiles-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Case Files</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Case Files</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="suspects-panel" class="tab-panel" aria-labelledby="suspects-tab" hidden>
-            suspects-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Suspects</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Suspects</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="evidence-panel" class="tab-panel" aria-labelledby="evidence-tab" hidden>
-            evidence-ta
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Evidence</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Evidence</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="maps-panel" class="tab-panel" aria-labelledby="maps-tab" hidden>
-            maps-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Maps</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Maps</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="calendars-panel" class="tab-panel" aria-labelledby="calendars-tab" hidden>
-            calendars-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Calendars</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Calendars</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="notebooks-panel" class="tab-panel" aria-labelledby="notebooks-tab" hidden>
-            notebooks-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Notebooks</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Notebooks</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="timelines-panel" class="tab-panel" aria-labelledby="timelines-tab" hidden>
-            timelines-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Timelines</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Timelines</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="floorplans-panel" class="tab-panel" aria-labelledby="floorplans-tab" hidden>
-            floorplans-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Floor Plans</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Floor Plans</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="communications-panel" class="tab-panel" aria-labelledby="communications-tab" hidden>
-            communications-tab
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Communications</h2>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Communications</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>  
           </section>
           <section role="tabpanel" id="settings-panel" class="tab-panel" aria-labelledby="settings-tab" hidden>
-            <button type="button" data-type="theme" title="Toggle theme"></button>
+            <section class="panel left" aria-labelledby="clue-left">
+              <h2 id="set-left">Settings</h2>
+                <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" data-type="theme" title="Toggle theme"></button>
+                </div>
+                <div class="list">
+                  <div class="row"><strong>Board</strong><small>Untitled</small></div>
+                  <div class="row"><strong>Grid</strong><small>Off</small></div>
+                  <div class="row"><strong>Snap</strong><small>Off</small></div>
+                  <div class="row"><strong>Status</strong><small id="insp-status">Idle</small></div>
+              </div>
+            </section>
+            <section class="panel main" aria-labelledby="clue-main">
+            <h2 id="set-left">Settings</h2>
+            </section>
+            <aside class="panel right" aria-labelledby="clue-right">
+              <div class="list">
+                <div class="row"><strong>Selected</strong><small>RECT 1</small></div>
+                <div class="row"><strong>X</strong><small id="insp-x">0</small></div>
+                <div class="row"><strong>Y</strong><small id="insp-y">0</small></div>
+                <div class="row"><strong>W</strong><small id="insp-w">0</small></div>
+                <div class="row"><strong>H</strong><small id="insp-h">0</small></div>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <button type="button" id="btnCenter">Center</button>
+                <button type="button" id="btnReset">Reset</button>
+              </div>
+              <div class="console" role="group" aria-label="Canvas actions">
+                <textarea rows="8" placeholder="textarea…"></textarea>  
+              </div>
+              <form id="ocForm" class="console" role="group" aria-label="Send OC message">
+                <input id="ocInput" type="text" placeholder="Type OC message…" aria-label="OC message text">
+                <button type="submit">Send</button>
+              </form>
+            </aside>          
           </section>
         </main>
     </div>
