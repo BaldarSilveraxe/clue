@@ -136,16 +136,102 @@ header {
   color: var(--brandFG);
 }
 
+.content {
+  display: grid;
+  min-block-size: 0;
+  padding-block-start: clamp(8px, 1.5vw, 16px);
+}
+
 .main { container-type: inline-size; }
+
 
 .tab-panel {
   display: grid;
   grid-template-columns: 260px 1fr 300px;
   grid-template-areas: "left main right";
-  block-size: 100%;
+  block-size: 100%; 
   min-block-size: 0;
   gap: clamp(8px, 1.5vw, 16px);
   overflow: auto; /* This might fight for scroll control with the contents*/
 }
 
 [hidden] { display: none; }
+
+.panel {
+  align-content: start;
+  background: var(--panelBG);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: grid;
+  gap: clamp(8px, 1.5vw, 16px);
+  padding: clamp(8px, 1.5vw, 16px);
+}
+
+.left  { grid-area: left;  }
+.main  { grid-area: main;  }
+.right { grid-area: right; }
+
+.panel h2 {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 20px);
+  letter-spacing: 0.02em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.list { display: grid; gap: 8px; }
+
+.row {
+  align-items: center;
+  background: var(--rowBG);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr auto;
+  padding: 8px 10px;
+}
+
+.row:hover {
+  color: var(--rowHover);
+  border-color: var(--rowHover);
+  box-shadow: 0 0 5px var(--rowHover);
+}
+
+.console {
+  align-items: center;
+  display: grid;
+  gap: clamp(8px, 1.5vw, 16px);
+  grid-template-columns: 1fr auto;
+}
+
+.console input[type="text"],
+.console button,
+.console textarea {
+  background: var(--rowBG);
+  border: 1px solid var(--line);
+  border-radius: calc(10px / 1.5);
+  color: inherit;
+  font: inherit;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.console input[type="text"]::placeholder {
+  color: var(--inputPlaceholder);
+}
+
+.console input[type="text"]:hover,
+.console input[type="text"]:focus-visible,
+.console button:hover,
+.console button:focus-visible,
+.console textarea:hover,
+.console textarea:focus-visible {
+  border-color: var(--line-hover);
+  box-shadow: 0 0 0 1px var(--line-hover) inset;
+}
+
+.console button[data-type="theme"] {
+  grid-column: 1 / -1;
+  width: 100%;
+}
