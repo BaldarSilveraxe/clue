@@ -1,3 +1,7 @@
+/* =========================
+   THEME TOKENS
+========================= */
+
 :root {
   --background: oklch(22% 0.03 260);
   --bodyBG: oklch(17% 0.03 260);
@@ -36,43 +40,43 @@
   --rowHover: oklch(36% 0.03 250);
 }
 
+/* derived lines */
 :root {
   --line: color-mix(in oklch, var(--bodyFB) 20%, transparent);
   --line-hover: color-mix(in oklch, var(--bodyFB) 28%, transparent);
   --line-strong: var(--line);
 }
 
-html[data-theme="light"] {
-  color-scheme: light;
-}
+/* =========================
+   GLOBAL RESETS
+========================= */
 
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"]  { color-scheme: dark; }
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html,
-body {
-  block-size: 100%;
-}
+html, body { block-size: 100%; }
 
 body {
   background: var(--bodyBG);
   color: var(--bodyFB);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+               "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   line-height: 1.5;
   margin: 0;
 }
 
+/* =========================
+   PAGE LAYOUT
+========================= */
+
 .page {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr); /* header + fill */
   min-block-size: 100svh;
 }
 
@@ -86,9 +90,20 @@ header {
   z-index: 10;
 }
 
-.nav-primary {
+.bar {
+  display: grid;
+  grid-template-columns: 1fr auto; /* nav | brand */
   align-items: center;
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav-primary {
   display: flex;
+  align-items: center;
   gap: clamp(8px, 1.5vw, 16px);
 }
 
@@ -116,19 +131,17 @@ header {
 }
 
 .icon {
+  inline-size: 1em;
   block-size: 1em;
   display: inline-block;
   fill: currentColor;
-  inline-size: 1em;
   margin-inline-start: 0.4em;
   vertical-align: -0.125em;
 }
 
-.bar { display: grid; grid-template-columns: 1fr auto; }
-
 .brand {
   display: inline-flex;
-  align-items: center;
+  align-items: center; /* vertically centered */
   gap: 0.5rem;
   line-height: 1;
   letter-spacing: 0.02em;
@@ -136,41 +149,58 @@ header {
   color: var(--brandFG);
 }
 
+/* =========================
+   MAIN CONTENT AREA
+========================= */
+
 .content {
   display: grid;
-  min-block-size: 0;
+  /* critical: rows that can actually shrink/grow */
+  grid-auto-rows: minmax(0, 1fr);
+  min-block-size: 0; /* allow children to define overflow */
   padding-block-start: clamp(8px, 1.5vw, 16px);
 }
 
-.main { container-type: inline-size; }
-
-
+/* tab panel = 3-column grid */
 .tab-panel {
   display: grid;
   grid-template-columns: 260px 1fr 300px;
   grid-template-areas: "left main right";
-  block-size: 100%; 
-  min-block-size: 0;
   gap: clamp(8px, 1.5vw, 16px);
-  overflow: auto; /* This might fight for scroll control with the contents*/
+  align-items: stretch;   /* stretch children vertically */
+  block-size: 100%;
+  min-block-size: 0;      /* allow internal overflow */
 }
 
-[hidden] { display: none; }
+[hidden] { display: none !important; }
 
+/* column areas */
+.left  { grid-area: left; }
+.right { grid-area: right; }
+
+/* shared panel chrome */
 .panel {
+  display: grid;
   align-content: start;
+  gap: clamp(8px, 1.5vw, 16px);
   background: var(--panelBG);
   border: 1px solid var(--line);
   border-radius: 10px;
-  display: grid;
-  gap: clamp(8px, 1.5vw, 16px);
   padding: clamp(8px, 1.5vw, 16px);
+  min-block-size: 0; /* don’t force children to overflow */
 }
 
-.left  { grid-area: left;  }
-.main  { grid-area: main;  }
-.right { grid-area: right; }
+/* center column: make it a flex column so the canvas can fill */
+.panel.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  min-block-size: 0;
+  /* optional: container queries for inner UI */
+  container-type: inline-size;
+}
 
+/* headings */
 .panel h2 {
   margin: 0;
   font-size: clamp(16px, 2vw, 20px);
@@ -179,16 +209,17 @@ header {
   border-bottom: 1px solid var(--line);
 }
 
+/* lists & rows */
 .list { display: grid; gap: 8px; }
 
 .row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
   align-items: center;
   background: var(--rowBG);
   border: 1px solid var(--line);
   border-radius: 8px;
-  display: grid;
-  gap: 8px;
-  grid-template-columns: 1fr auto;
   padding: 8px 10px;
 }
 
@@ -198,11 +229,12 @@ header {
   box-shadow: 0 0 5px var(--rowHover);
 }
 
+/* console groups */
 .console {
-  align-items: center;
   display: grid;
-  gap: clamp(8px, 1.5vw, 16px);
   grid-template-columns: 1fr auto;
+  gap: clamp(8px, 1.5vw, 16px);
+  align-items: center;
 }
 
 .console input[type="text"],
@@ -214,12 +246,10 @@ header {
   color: inherit;
   font: inherit;
   padding: 10px 12px;
-  width: 100%;
+  inline-size: 100%;
 }
 
-.console input[type="text"]::placeholder {
-  color: var(--inputPlaceholder);
-}
+.console input[type="text"]::placeholder { color: var(--inputPlaceholder); }
 
 .console input[type="text"]:hover,
 .console input[type="text"]:focus-visible,
@@ -233,5 +263,24 @@ header {
 
 .console button[data-type="theme"] {
   grid-column: 1 / -1;
-  width: 100%;
+  inline-size: 100%;
+}
+
+/* =========================
+   CANVAS AREA
+========================= */
+
+.canvas-wrap {
+  position: relative;
+  flex: 1 1 auto;   /* critical: fill the remaining vertical space */
+  min-block-size: 0;
+}
+
+.canvas-clueboard {
+  display: block;
+  background: var(--cardBG);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  inline-size: 100%;
+  block-size: 100%; /* fills the wrapper → fills the column */
 }
