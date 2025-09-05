@@ -20,6 +20,7 @@ flowchart TD
 
   U[User Browser] -->|HTTP| Host1
   Client -->|WS: VITE_WS_URL| Server
+```
 
 ```mermaid
 sequenceDiagram
