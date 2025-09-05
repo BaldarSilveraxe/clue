@@ -1,5 +1,7 @@
 // src/realtime.js
 console.log("[Yjs] realtime.js loaded");
+console.log("[Yjs] import.meta.env dump =", import.meta?.env);
+console.log("[Yjs] VITE_WS_URL =", import.meta?.env?.VITE_WS_URL);
 import * as Y from "yjs";
 import { HocuspocusProvider } from "@hocuspocus/provider";
 
