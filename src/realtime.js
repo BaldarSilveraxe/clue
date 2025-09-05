@@ -55,7 +55,8 @@ const provider = new HocuspocusProvider({
   url: WS_URL,
   name: docName,
   document: doc,
-  onStatus: ({ status }) => console.log("[Yjs]", status, "→", WS_URL),
+  onStatus: ({ status }) => console.log('[Yjs]', status, '→', WS_URL),
+  onClose: () => console.log('[Yjs] provider closed'),
 });
 
 // ---------- Ensure initial nodes exist ----------
