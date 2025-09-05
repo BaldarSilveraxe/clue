@@ -33,6 +33,7 @@ sequenceDiagram
   Yjs->>WS: WebSocket connect (optional token/origin checks)
   WS-->>Yjs: ack + sync awareness
   Yjs-->>Frontend: shared doc updates (Y.Doc)
+
   loop Editing/Interaction
     Frontend->>Yjs: local changes (CRDT ops)
     Yjs->>WS: broadcast ops
